@@ -1,0 +1,104 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="440" d:DesignWidth="630">
+    <Grid x:Name="Root">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="25" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Content="传统对战模式" VerticalAlignment="Center"
+                      Margin="3" ToolTipService.ToolTip="传统对战模式."/>
+                    <ComboBox x:Name="ConstructedRulesComboBox" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                      Margin="40,3" Width="50" IsEditable="False"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" Content="对战卡组名称" VerticalAlignment="Center" Margin="3" ToolTipService.ToolTip="对战卡组名称."/>
+                    <TextBox x:Name="ConstructedCustomDeckTextBox" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="40,3"/>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Content="开局自动打招呼" VerticalAlignment="Center" Margin="3" ToolTipService.ToolTip="开局自动打招呼."/>
+                    <CheckBox x:Name="AutoGreetCheckBox" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="3" IsChecked="False"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" Content="开局前缓存卡组" VerticalAlignment="Center" Margin="3" ToolTipService.ToolTip="开局前缓存卡组."/>
+                    <CheckBox x:Name="NeedsToCacheCustomDecksCheckBox" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="3" IsEnabled="False" IsChecked="True"/>
+                    <Button x:Name="RecacheCustomDecksButton" Content="重新缓存" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Margin="3,0,3,1" ToolTipService.ToolTip="重新缓存."/>
+
+                    <Label Grid.Row="2" Grid.Column="0" Content="设置炉石窗口宽高" VerticalAlignment="Center" Margin="3" ToolTipService.ToolTip="设置炉石窗口宽高."/>
+                    <CheckBox x:Name="ReleaseLimitCheckBox" Grid.Row="2" Grid.Column="1" 
+                      VerticalAlignment="Center" Margin="3" IsChecked="True"/>
+                    <TextBox x:Name="ReleaseLimitWTextBox" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Margin="3" Width="50"/>
+                    <TextBox x:Name="ReleaseLimitHTextBox" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" Margin="3" Width="50" IsEnabled="False" />
+
+                    <Label Grid.Row="3" Grid.Column="0" Content="保持排名(赢1投1)" VerticalAlignment="Center" Margin="3" ToolTipService.ToolTip="赢了后，下局会在留牌阶段立即投降."/>
+                    <CheckBox x:Name="AutoConcedeAfterConstructedWinCheckBox" Grid.Row="3" 
+                      Grid.Column="1" VerticalAlignment="Center" Margin="3"/>
+
+                    <Label Grid.Row="4" Grid.Column="0" Content="普通互投拿千胜头像" VerticalAlignment="Center" Margin="3" ToolTipService.ToolTip="赢了后，下局会在留牌阶段立即投降；输了后，下局会等待一段自己设置的时间后再投降.（推荐经典到了传说后，先开启极速投降到互投区，再开启本功能互投，时间推荐1.5秒到3秒，即1500ms-3000ms）"/>
+                    <CheckBox x:Name="NormalConcedeCheckBox" Grid.Row="4" Grid.Column="1" 
+                      VerticalAlignment="Center" Margin="3"/>
+
+                    <Label Grid.Row="5" Grid.Column="0" Content="急速投降至互投区" VerticalAlignment="Center" Margin="3" ToolTipService.ToolTip="一直在留牌阶段立即投降，直到对手从传说到钻石到白金到青铜再到传说，即到了互投区."/>
+                    <CheckBox x:Name="ForceConcedeAtMulliganCheckBox" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Margin="3"/>
+
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25" />
+                        <RowDefinition Height="25" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Content="投降最小延时(ms)" VerticalAlignment="Center" Margin="3" ToolTipService.ToolTip="推荐1.5秒，即1500ms."/>
+                    <TextBox x:Name="AutoConcedeMinDelayMsTextBox" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="15,3" Width="50"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" Content="投降最大延时(ms)" VerticalAlignment="Center" Margin="3" ToolTipService.ToolTip="推荐3秒，即3000ms."/>
+                    <TextBox x:Name="AutoConcedeMaxDelayMsTextBox" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="15,3" Width="50"/>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Content="全局速度（齿轮）" VerticalAlignment="Center" Margin="3" ToolTipService.ToolTip="加速动画，有很大概率封号，请谨慎使用，默认1.0即可."/>
+                    <Label x:Name="SliderShopSpeedRatioTextLabel" Grid.Row="0" Grid.Column="1" Content="1.0" VerticalAlignment="Center" Margin="15,3" Width="40"/>
+                    <Slider x:Name="SliderShopSpeedRatioSlider" Grid.Row="0" Grid.Column="2" 
+                      VerticalAlignment="Center" Margin="3" Minimum="1" Maximum="9" SmallChange="0.1" Width="150" IsSnapToTickEnabled="False" IsMoveToPointEnabled="True"/>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

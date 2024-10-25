@@ -1,0 +1,142 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="950" d:DesignWidth="630">
+    <Grid x:Name="Root">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Content="天梯对战策略:"  Margin="3,5,3,1" ToolTipService.ToolTip="天梯对战策略."/>
+                    <ComboBox x:Name="defaultBehaviorComboBox1" Grid.Row="0" Grid.Column="1" Margin="3" IsEditable="False" />
+                    <Label Grid.Row="0" Grid.Column="2" Content="卡组代码->鼠标滚轮往下翻"  Margin="3,5,3,1" ToolTipService.ToolTip="卡组代码鼠标滚轮往下翻."/>
+
+                    <Button Content="打开最近对战记录文件夹" Name="lastMatch" Grid.Row="1" Grid.Column="0" Margin="3"/>
+                    <Button Content="删除所有日志" Name="clearLogButton" Grid.Row="1" Grid.Column="1" Margin="3"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" Content="表情切换: "  Margin="3,5,3,1" ToolTipService.ToolTip="表情切换."/>
+                    <ComboBox x:Name="emoteComboBox" Grid.Row="2" Grid.Column="1" Margin="3" IsEditable="False" />
+
+                    <Label Grid.Row="3" Grid.Column="0" Content="最大计算量: "  Margin="3,5,3,1" ToolTipService.ToolTip="最大计算量，数值越大,计算时长越大，越接近策略理想计算场面，默认为3000，最低不会低于 100."/>
+                    <TextBox Name="MaxWideTextBox" Grid.Row="3" Grid.Column="1" Margin="3,5,3,1"/>
+
+
+                    <Label Grid.Row="4" Grid.Column="0" Content="最大考虑步数: "  Margin="3,5,3,1" ToolTipService.ToolTip="AI计算考虑的最大步数，默认为12."/>
+                    <TextBox Name="MaxDeepTextBox" Grid.Row="4" Grid.Column="1" Margin="3,5,3,1"/>
+
+
+                    <Label Grid.Row="5" Grid.Column="0" Content="每步最大保留场面数: "  Margin="3,5,3,1" ToolTipService.ToolTip="每一步只保留最优的场面数量继续进行计算，默认为60，最低不会低于1"/>
+                    <TextBox Name="MaxCalTextBox" Grid.Row="5" Grid.Column="1" Margin="3,5,3,1"/>
+
+                    <Label Grid.Row="6" Grid.Column="0" Content="打脸奖励（不建议修改）: "  Margin="3,5,3,1" ToolTipService.ToolTip="鼓励兄弟打脸的程度，越高兄弟越倾向于打脸，可以设置负数鼓励兄弟解场.如果使用的是推荐卡组，强烈不建议设置。"/>
+                    <TextBox Name="EnfaceRewardTextBox" Grid.Row="6" Grid.Column="1" Margin="3,5,3,1"/>
+
+                    <Label Grid.Row="7" Grid.Column="0" Content="不生成日志: "  Margin="3,5,3,1" ToolTipService.ToolTip="别关啊，至少提交个issue再走吧，求求了"/>
+                    <CheckBox x:Name="SetLogCheckBox" Grid.Row="7" Grid.Column="1" Margin="3,5,3,1"/>
+                </Grid>
+
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+
+                    <TextBox Name="Description" TextWrapping="Wrap" Width="500"  Grid.Row="0" Grid.Column="0"  Margin="3,5,3,1" Height="Auto" Text="
+AI值相关说明和卡组代码请滑动到下面的文本框中查看。&#13;&#10;
+本策略由各位大佬共同开发：【李文浩】【看书范】【酸小明】【血色】【白寸衫】【不着调的～man】等。"/>
+
+                    <TextBox Name="deckCode" TextWrapping="Wrap" Width="500"  Grid.Row="1" Grid.Column="0"  Margin="3,5,3,1" Height="Auto" Text="
+参考卡组代码：&#xA;&#xA;
+【狂野】快攻暗牧：&#xA;AAEBAa0GApG8Arv3Aw6hBJEP6bADurYD184Do/cDrfcDjYEE3aQFxKgG/KgG17oG1cEG3PMGAAA=&#xA;&#xA;
+【标准】元素法：&#xA;AAECAf0EArSnBr2+Bg6WtwXyxAWx/gXf/gXUlQbxmwaYnQayngbTngbBnwbMogbipgaozgbt5gYAAA==&#xA;&#xA;
+【狂野】剑鱼贼：&#xA;AAEBAaIHApG8AsekBg6MAvsP6bADqssD890DiskEmtsE16MF07IFv/cF1p4G/KUG/KgGyfQGAAED87MGx6QG9rMGx6QG6N4Gx6QGAAA=&#xA;&#xA;
+【狂野】锁喉剑鱼贼：&#xA;AAEBAaIHApG8AsekBg77D+XRAr+uA+mwA6rLA470A4rJBJrbBNejBb/3BdaeBvylBvyoBsn0BgABA/OzBsekBvazBsekBujeBsekBgAA&#xA;&#xA;
+【狂野】暗龙牧：&#xA;AAEBAcz8BQSRvAK79wPHpAaiswYNoQSRD+4RmLYD184Do/cDrfcDssEE3aQFlaoFxpwG6qgG3PMGAAED87MGx6QG9rMGx6QG6N4Gx6QGAAA=&#xA;&#xA;
+【狂野】偶数萨：&#xA;AAEBAaoIBjPN9AKdowOywQSx2QTHpAYMvgbWD9qlA/q0BIbUBKrZBL3lBPTyBaL6BcOPBpyeBsGeBgABA/OzBsekBvazBsekBujeBsekBgAA&#xA;&#xA;
+【狂野】奥秘法：&#xA;AAEBAf0EAA/3Dde2Auu6Aoe9Ar6kA/SrA5HhA+efBMagBKPkBP7sBLztBP+SBduhBejoBQAA&#xA;&#xA;
+【标准】酸快攻德：&#xA;AAECAbSKAwAPrewDs+wD7PUD9PYDrIAEsIAEh58E4aQEiLIErsAEqM4EgdQEntQE1t4E3e0EAA==&#xA;&#xA;
+【通用】酸鱼人萨：&#xA;AAECAc2+BQSo7gPblASX1ATy3QQNk+gDlOgDs+gD3ewDlfADtZ8EoqAEq6AE1bIEssEEws4Exc4E7tMEAA=="/>
+
+					<TextBox Name="Statement" TextWrapping="Wrap" Width="500"  Grid.Row="2" Grid.Column="0"  Margin="3,5,3,1" Height="Auto" Text="
+声明： 使用炉石兄弟辅助进行游戏的行为违反了暴雪用户协议 1.C.ii.2 使用机器人程序软件（BOT）： 任何未经暴雪和/或运营方明确授权，允许自动控制游戏，服务器和/或任何组件或其功能的的代码或/和软件，如自动操控游戏中的角色；因此根据协议，暴雪和/或运营方可以暂停、撤销或终止您使用本平台或本平台的部分功能或组成部分的许可。 &#13;&#10;
+简单来说使用炉石兄弟操控角色出牌的行为违反了暴雪用户条例，因此会被封号。&#13;&#10;
+策略的开源分享仅供学习交流使用，请勿主动向外传播。&#13;&#10;
+分享策略是为了收集伏笔数据，优化策略以满足个人兴趣爱好，我承诺没有在任何场合贩卖炉石兄弟主程序或者策略，并且已经在捐赠声明了捐赠不会获得额外的任何服务，所有提供的资源都是免费的。之后会删除之前分享的主程序并不再主动进行主程序的分享。如果该策略的开源分享行为损害了暴雪/运营方的利益，请联系我停止更新/删库，我会全力配合。"/>
+
+                    <TextBox Name="AIDescription" TextWrapping="Wrap" Width="500"  Grid.Row="3" Grid.Column="0"  Margin="3,5,3,1" Height="Auto" Text="
+最大计算量:设置的越高，策略的最大允许的计算量就越大，计算超过这个数量的场面时会直接退出计算，一般视机器性能设置到确保操作能打完的程度就可以了。默认是3000，最低不会低于 100。 &#13;&#10;
+最大考虑步数： AI计算考虑的最大步数，默认为12，如果随机性高的话建议可以适当调低以提高性能，因为每次随机效果发生时兄弟检测到场面与计算不一致都会重新计算. &#13;&#10;
+每步最大保留场面数：每一步只保留最优的场面数量继续进行计算，默认为60，最低不会低于1。因为兄弟在每一步的计算时都只会取场面最好的那么几个场面保留到下一步继续计算，因此如果设置成 1 就是每步只考虑当前最优打法；设置的很大就是不进行剪枝操作，保留所有场面来寻找策略认为的理论最优解。 &#13;&#10;
+打脸奖励：设置的越高随从和英雄越倾向于打脸，负数则更倾向于解场（设置绝对值过大的负数可能导致不攻击），如果已经在使用完善的策略和卡组，强烈不推荐手动设置该参数，设置会造成打法上的大幅差异。 &#13;&#10;
+我自己进行场面模拟的时候就是使用默认参数进行模拟的，因此设置低于这个数值的伏笔不用反馈给我。"/>
+
+				</Grid>
+
+				<Grid Visibility="Collapsed">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+
+					
+					<Label Grid.Row="1" Grid.Column="0" Content="防奥秘: "  Margin="3,5,3,1" ToolTipService.ToolTip="防奥秘.勾选后开启."/>
+					<CheckBox x:Name="UseSecretsPlayAroundCheckBox" Grid.Row="1" Grid.Column="1" Margin="3,5,3,1"/>
+
+					<Label Grid.Row="2" Grid.Column="0" Content="下回合斩杀本回合打脸: "  Margin="3,5,3,1" ToolTipService.ToolTip="如果当前场面全部打脸,下一回合就可以斩杀,这一回合就会全部打脸.勾选后开启."/>
+					<CheckBox x:Name="BerserkIfCanFinishNextTourCheckBox" Grid.Row="2" Grid.Column="1" Margin="3,5,3,1"/>
+				
+					<Label Grid.Row="3" Grid.Column="0" Content="打印自定义惩罚值: "  Margin="3,5,3,1" ToolTipService.ToolTip="如果勾选此选项将会打印出AI计算过程中每张牌受到的惩罚值（0不显示）."/>
+					<CheckBox x:Name="PrintPenaltiesCheckBox" Grid.Row="3" Grid.Column="1" Margin="3,5,3,1"/>
+
+					<Label Grid.Row="4" Grid.Column="0" Content="打印出牌惩罚值: "  Margin="3,5,3,1" ToolTipService.ToolTip="如果勾选此选项将会打印出AI将出的牌的受到的惩罚值（0不显示）."/>
+					<CheckBox x:Name="PrintNextMoveCheckBox" Grid.Row="4" Grid.Column="1" Margin="3,5,3,1"/>
+
+					<Label Grid.Row="5" Grid.Column="0" Content="抢脸阈值: "  Margin="3,5,3,1" ToolTipService.ToolTip="敌方生命低于该血量时开始抢脸."/>
+					<TextBox Name="EnfacehpTextBox" Grid.Row="5" Grid.Column="1" Margin="3,5,3,1"/>
+					
+					
+					
+					<Button Content="重置" Name="ResetButton" Grid.Row="7" Grid.Column="0" Margin="3"/>
+
+					
+				</Grid>
+	
+        	</StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

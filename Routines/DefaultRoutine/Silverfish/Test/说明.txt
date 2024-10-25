@@ -1,0 +1,33 @@
+本文件夹致力于Ai算法优化后的测试
+验证策略、参数、Sim等修改后，牌面出局是否符合预期
+
+Data文件夹放测试用例，配图可以看到直观对应的场面
+
+启用说明：
+为了能编译+正常运行，在加壳的兄弟版本里面，需要确保调用的Ai类里面不使用Triton namespace下的内容
+修改点：
+1) Helpfunctions.cs  
+注释掉 ILog log 类成员  //private static readonly ILog Log = Logger.GetLoggerInstanceForType(); // Todo:  为了能够run Test不用Triton里面组件
+void ErrorLog(string s) 里面不使用Log    //Log.Info(s);  // Todo: 为了调试AiTest,log另行输出
+
+2）BoardTester.cs
+botBase的获取方法不使用 Silverfish.Instance(因为这个类里面涉及Triton)
+//Ai.Instance.botBase = Silverfish.Instance.getBehaviorByName(this.botBehavior);
+Ai.Instance.botBase = new BehaviorRush(); // Todo: 应该根据字符串botBehavior进行判断, new出不同的Behavior对象
+
+3） CardDB.cs    这个修改和Triton无关，经过调试，只是避免运行出错
+setAdditionalData()函数里面 增加两行，否则运行出错，没考虑id为None的情况
+foreach (Card c in this.cardlist)
+            {
+                if (c.cardIDenum == cardIDEnum.None)  // 此两行为新增
+                    continue;                                               //Todo: 为了确保Test能跑通
+
+4）正式测试前修改
+TestBase.cs
+里面的路径要正确，确保能初始化CardDB正常，根据本地真实路径修改
+AiTest.cs
+里面的Data路径要正确，确保能读取测试用例
+
+如果路径填错，运行时会报错，很容易发现
+
+

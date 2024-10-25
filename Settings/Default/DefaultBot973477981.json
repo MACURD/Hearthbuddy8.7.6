@@ -1,0 +1,16 @@
+{
+  "ConstructedGameRule": 2,
+  "ConstructedCustomDeck": "宇宙控制",
+  "LastDeckId": 8487797292,
+  "AutoGreet": false,
+  "ReleaseLimitW": 144,
+  "ReleaseLimitH": 108,
+  "ReleaseLimit": true,
+  "AutoConcedeAfterConstructedWin": false,
+  "NormalConcede": false,
+  "ForceConcedeAtMulligan": false,
+  "AutoConcedeMinDelayMs": 1500,
+  "AutoConcedeMaxDelayMs": 3000,
+  "SliderShopSpeedRatioText": "1.0",
+  "SliderShopSpeedRatio": 1.0
+}

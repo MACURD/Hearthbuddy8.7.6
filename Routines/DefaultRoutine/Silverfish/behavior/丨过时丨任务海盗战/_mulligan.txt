@@ -1,0 +1,54 @@
+
+//秘密通道
+SCH_305;thief;None;Discard:2;/
+//携刃信使
+TSC_085;thief;None;Discard:2;/
+//暗影之门
+REV_938;thief;None;Discard:2;/
+//刺豚拳手
+TSC_002;thief;None;Discard:2;/
+//洞穴探宝者
+LOOT_033;thief;None;Hold:1;/
+// 剑鱼:
+TSC_086;thief;None;Discard:2;/LOOT_033
+TSC_086;thief;None;Hold:1;/
+// 空降歹徒:
+DRG_056;thief;None;Hold:2;/
+// 血帆桨手
+CS3_008;thief;None;Hold:2;/
+// 空中悍匪
+DRG_024;thief;None;Hold:2;/
+// 恩佐斯的副官
+OG_312;thief;None;Hold:1;/
+// 船载火炮:
+GVG_075;thief;None;Hold:2;/
+// 港口匪徒
+SW_029;thief;None;Hold:1;/
+// 南海船工:
+CS2_146;thief;None;Hold:1;/
+// 血帆海盗:
+NEW1_025;thief;None;Hold:1;/
+// 蠕动的恐魔:
+DMF_091;thief;None;Discard:2;/
+// 曼科里克:
+BAR_721;thief;None;Discard:2;/
+// 海盗帕奇斯:
+CFM_637;thief;None;Discard:2;/
+// 异教低阶牧师
+SCH_713;thief;None;Discard:2;/
+// 雾帆劫掠者
+CS3_022;thief;None;Discard:2;/
+// 南海船长
+NEW1_027;thief;None;Discard:2;/
+CORE_NEW1_027;thief;None;Discard:2;/
+// 暴风城海盗
+SW_093;thief;None;Discard:2;/
+// 海盗之锚
+DRG_025;thief;None;Discard:2;/
+// 空中炮艇
+DRG_023;thief;None;Discard:2;/
+DRG_023;thief;None;Hold:1;/GAME_005
+// 血帆教徒
+OG_315;thief;None;Discard:2;/
+// 吞剑艺人
+DMF_521;thief;None;Discard:2;/

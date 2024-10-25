@@ -1,0 +1,18 @@
+2024-10-06 04:52:41,898 [1] INFO  Logger (null) - Hearthbuddy Version: 0.0.0.0
+Path: E:\8.7.6\<ExeName>
+
+OS Name: Microsoft Windows 11 家庭中文版
+OS Version: 10.0.22631
+OS Architecture: 64 位
+InstalledUICulture: zh-CN [Chinese (Simplified, China)]
+CurrentUICulture: zh-CN [Chinese (Simplified, China)]
+CurrentCulture: zh-CN [Chinese (Simplified, China)]
+
+2024-10-06 04:52:41,947 [1] INFO  Logger (null) - Now setting up JitProfiles...
+2024-10-06 04:52:41,951 [1] INFO  Logger (null) - JitProfiles successfully setup!
+2024-10-06 04:52:41,956 [1] INFO  Logger (null) - Now beginning pre-start tasks.
+2024-10-06 04:52:41,957 [1] INFO  Logger (null) - Now checking prerequisites...
+2024-10-06 04:52:41,970 [1] ERROR Logger (null) - [中控设置] 默认设置操作系统 = Windows10.
+2024-10-06 04:52:42,360 [1] INFO  Logger (null) - Prerequisite check complete!
+2024-10-06 04:52:42,596 [1] INFO  Logger (null) - Now relaunching.
+2024-10-06 04:52:42,724 [1] INFO  Logger (null) - [AuthRegion] China.

@@ -1,0 +1,23 @@
+{
+  "Wins": 0,
+  "Losses": 0,
+  "Concedes": 0,
+  "Level": 0,
+  "Xp": 0,
+  "XpNeeded": 0,
+  "AllXp": 0,
+  "AllXpNeeded": 602200,
+  "AllRunTime": 0,
+  "AllRunTimeText": "0.0",
+  "AllGetXp": 0,
+  "PerHourXp": 500,
+  "PerHourXpStr": "500/小时",
+  "FullXpNeeded": 602200,
+  "FullTimeNeeded": "未知",
+  "Collection": "未知",
+  "PassportEnd": "未知",
+  "ClassicInfo": "未知",
+  "StandardInfo": "未知",
+  "WildInfo": "未知",
+  "TwistInfo": "未知"
+}
